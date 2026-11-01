@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A la Carte Home Concierge and Pet Sitting</title>
+  <meta name="description" content="Home concierge and pet sitting while you're away. Regular checks, photo reports, and one local person you can call. Check availability and request your dates.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="topnav">
+    <div class="wrap navrow">
+      <a class="brand" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span data-name>A la Carte Home Concierge and Pet Sitting</span></a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn small" href="#book">Book dates</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Home concierge &amp; pet sitting</p>
+        <h1>Leave town. We'll look after home and pets.</h1>
+        <p class="tagline">Regular visits while you're away, a photo report after every one, and a real local person to call if anything comes up.</p>
+        <div class="cta-row">
+          <a class="btn" href="#book">Check availability</a>
+          <a class="btn ghost" href="#services">See services</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="report-head"><span class="dot"></span>Visit report</div>
+        <ul class="report">
+          <li><span class="ok">&#10003;</span>Doors and windows locked</li>
+          <li><span class="ok">&#10003;</span>No leaks under sinks or water heater</li>
+          <li><span class="ok">&#10003;</span>Thermostat at 68&deg;</li>
+          <li><span class="ok">&#10003;</span>Mail and packages brought in</li>
+          <li><span class="ok">&#10003;</span>Dog walked and fed, plants watered</li>
+        </ul>
+        <div class="report-foot">5 photos attached</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="wrap section">
+      <h2>Services, à la carte</h2>
+      <p class="lead">Choose only what you need, and pay only for what you choose. Every visit ends with a photo report sent to your phone.</p>
+      <div class="services">
+        <div class="card"><h3>Home checks</h3><p>Walk-throughs for leaks, power, heat and AC, locks, and anything out of place.</p></div>
+        <div class="card"><h3>Mail &amp; packages</h3><p>Brought inside and kept safe so the house never looks empty.</p></div>
+        <div class="card"><h3>Pet sitting</h3><p>Feeding, walks, play time, litter, and medication, with photos of your pets after every visit.</p></div>
+        <div class="card"><h3>Overnight stays</h3><p>Someone sleeping at the house for longer trips or extra peace of mind.</p></div>
+        <div class="card"><h3>Vendors &amp; deliveries</h3><p>We let in the plumber, cleaner, or landscaper and lock up after.</p></div>
+        <div class="card"><h3>Welcome home</h3><p>Lights on, heat or AC set, and groceries in the fridge before you walk in.</p></div>
+      </div>
+    </section>
+
+    <section id="how" class="band">
+      <div class="wrap section">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li><span class="num">1</span><h3>Pick your dates</h3><p>Choose your trip on the calendar below and tell us what you need.</p></li>
+          <li><span class="num">2</span><h3>Quick walk-through</h3><p>We meet before you leave to get keys, codes, and the details of your home.</p></li>
+          <li><span class="num">3</span><h3>Relax while you're away</h3><p>Get a photo report after every visit and a call right away if anything needs you.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="book" class="wrap section book">
+      <h2>Check availability &amp; book</h2>
+      <p class="hint">Tap the day you leave, then the day you return. Crossed-out days are already booked.</p>
+
+      <div class="booking-grid">
+        <div class="calendar" aria-label="Availability calendar">
+          <div class="cal-head">
+            <button type="button" class="nav" id="prev" aria-label="Previous month">&#8249;</button>
+            <h3 id="month-label"></h3>
+            <button type="button" class="nav" id="next" aria-label="Next month">&#8250;</button>
+          </div>
+          <div class="cal-dow"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="cal-days" id="days"></div>
+          <div class="legend">
+            <span><i class="sw avail"></i>Available</span>
+            <span><i class="sw booked"></i>Booked</span>
+            <span><i class="sw sel"></i>Your dates</span>
+          </div>
+        </div>
+
+        <form id="request-form" class="form">
+          <div class="picked" id="picked">No dates picked yet.</div>
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label>Town or neighborhood<input name="location"></label>
+          <label>What do you need?
+            <textarea name="details" rows="4" placeholder="Home checks, pet sitting, plants, overnight stays, anything else"></textarea>
+          </label>
+          <input type="hidden" name="start_date">
+          <input type="hidden" name="end_date">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+          <button class="btn" type="submit" id="submit" disabled>Send booking request</button>
+          <p class="status" id="status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="band">
+      <div class="wrap section faq">
+        <h2>Questions</h2>
+        <details><summary>How often do you visit?</summary><p>As often as you like. Most people choose once a day or every other day, and overnight stays are available for longer trips.</p></details>
+        <details><summary>What happens if something goes wrong?</summary><p>We call you right away, send photos, and can meet a plumber, electrician, or other pro at the house so you don't have to come home.</p></details>
+        <details><summary>Is my booking confirmed when I send the form?</summary><p>Not yet. The form sends a request, and we'll reach out within a day to confirm and set up a walk-through.</p></details>
+        <details><summary>How do you handle keys and alarm codes?</summary><p>We collect them at the walk-through, keep them private, and return them or leave them where you ask when you're back.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap footrow">
+      <div><strong data-name>A la Carte Home Concierge and Pet Sitting</strong><br>Your home, looked after while you're away.</div>
+      <div><a id="email-link" href="#">Email us</a> &middot; <a href="#book">Book dates</a></div>
+    </div>
+    <p class="wrap copy">&copy; <span id="year"></span> <span data-name>A la Carte Home Concierge and Pet Sitting</span></p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
